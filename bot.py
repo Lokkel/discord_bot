@@ -24,6 +24,10 @@ async def nine_nine(ctx):
 
     quotes = [
         'Kackbratze',
+        'Mirrors can,t talk. Lucky for you, they can,t laugh either',
+        'If I wanted to kill myself I would climb your ego and jump to your IQ',
+        'Ah you are polish. NAME EVERY KURWA!',
+        'Your only chance of getting laid is to crawl up a chickens butt and wait',
         'Kurwa',
         (
             'Cool. Cool cool cool cool cool cool cool, '
