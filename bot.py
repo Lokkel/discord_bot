@@ -1,6 +1,7 @@
 # bot.py
 import os
 import random
+import discord
 from dotenv import load_dotenv
 
 # 1
@@ -78,6 +79,7 @@ async def repeat(ctx, times: int, content='repeating...'):
 async def joined(ctx, member: discord.Member):
     """Says when a member joined."""
     await ctx.send('{0.name} joined in {0.joined_at}'.format(member))
+
 
 
 bot.run(TOKEN)
