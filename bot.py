@@ -36,7 +36,7 @@ async def nine_nine(ctx):
 
 #roll dice
 
-@bot.command(name='roll_dice', help='Simulates rolling dice. &roll_dice "number of dice"+"number of sides"')
+@bot.command(name='roll_dice', help=' number of dice"+"number of sides"')
 async def roll(ctx, number_of_dice: int, number_of_sides: int):
 
     dice = [
@@ -49,11 +49,11 @@ async def roll(ctx, number_of_dice: int, number_of_sides: int):
 
 @bot.command(name='create-channel', help='command + txt channel name')
 @commands.has_role('staff')
-async def create_channel(ctx, channel_name='snekfun'):
+async def create_channel(ctx, channel_name):
     guild = ctx.guild
     existing_channel = discord.utils.get(guild.channels, name=channel_name)
     if not existing_channel:
-        print(f'Creating a new channel: {channel_name}')
+        print('Creating a new channel: {channel_name}')
         await guild.create_text_channel(channel_name)
 
 #errorr
@@ -80,6 +80,17 @@ async def joined(ctx, member: discord.Member):
     """Says when a member joined."""
     await ctx.send('{0.name} joined in {0.joined_at}'.format(member))
 
+#messege
+@bot.command(name='dm', help='@name + messege the bot is sending')
+async def DM(ctx, user: discord.User, message):
+    message = message or "This Message is sent via DM"
+    await user.send(message)
 
+#spaM
+@bot.command(name='spam',help='@name + times + message to dm')
+async def spaM(ctx, user: discord.User,times: int, message):
+    message = message
+    for i in range(times):
+        await user.send(message)
 
 bot.run(TOKEN)
