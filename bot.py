@@ -93,6 +93,13 @@ async def DM(ctx, user: discord.User, message):
     message = message or "This Message is sent via DM"
     await user.send(message)
 
+#gregsen
+@bot.command(name='gregsen',help='gregsen')
+async def gregsen(ctx, content='Gregsen'):
+    """gregsen"""
+    for i in range(67):
+        await ctx.send(content)
+
 #spaM
 @bot.command(name='spam',help='@name + times + message to dm')
 async def spaM(ctx, user: discord.User,times: int, message):
